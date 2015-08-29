@@ -2,7 +2,6 @@
 */
 'use strict';
 //(function () {
-var host = "https://github.com/Cirych/freecamp-twitchtv/raw/master/";
 
 var tv = {
 	usernames:	["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff","medrybw"],
@@ -11,10 +10,9 @@ var tv = {
 };
 
 tv.usernames.forEach(function(username) {
-	//jsonp('streams', streams, username);
-	//jsonp('users', users, username);
+	jsonp('streams', streams, username);
+	jsonp('users', users, username);
 });
-tv.streamers = {"freecodecamp":{"user":"freecodecamp","stream":null,"name":"FreeCodeCamp","logo":"http://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-f1b681380c0b0380-300x300.png"},"storbeck":{"name":"storbeck","logo":"http://static-cdn.jtvnw.net/jtv_user_pictures/storbeck-profile_image-7ab13c2f781b601d-300x300.jpeg","user":"storbeck","stream":null},"terakilobyte":{"name":"terakilobyte","logo":null,"user":"terakilobyte","stream":null},"habathcx":{"user":"habathcx","stream":null,"name":"Habathcx","logo":"http://static-cdn.jtvnw.net/jtv_user_pictures/habathcx-profile_image-d75385dbe4f42a66-300x300.jpeg"},"RobotCaleb":{"name":"RobotCaleb","logo":"http://static-cdn.jtvnw.net/jtv_user_pictures/robotcaleb-profile_image-9422645f2f0f093c-300x300.png","user":"RobotCaleb","stream":null},"thomasballinger":{"user":"thomasballinger","stream":null,"name":"thomasballinger","logo":null},"noobs2ninjas":{"user":"noobs2ninjas","stream":null,"name":"noobs2ninjas","logo":"http://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_image-34707f847a73d934-300x300.png"},"beohoff":{"name":"Beohoff","logo":null,"user":"beohoff","stream":null},"medrybw":{"user":"medrybw","stream":"24/7 Classic Starcraft VoD stream 2000-2012 (6344 VoDs)","name":"MedryBW","logo":"http://static-cdn.jtvnw.net/jtv_user_pictures/medrybw-profile_image-19fce7e1b0d6c194-300x300.jpeg"}}
 
 function jsonp(url, callback, username) {
     var id = 'jsonp_' + url + username,
@@ -62,10 +60,10 @@ function setDOM(){
 		el = ''+
 			'<li>'+
 			'<a href="http://twitch.tv/'+tv.streamers[user].user+'">'+
-			'<div>'+
+			'<div class="tv_row">'+
 				'<img src="' + (tv.streamers[user].logo||'http://placehold.it/50x50') + '">'+
-				'<div>'+ tv.streamers[user].name + '<br />' + (tv.streamers[user].stream||'') +'</div>'+
-				'<div><i class="material-icons">'+(tv.streamers[user].stream?'videocam':'pause')+'</i></div>'+
+				'<div class="tv_name">'+ tv.streamers[user].name + '<div class="tv_stream">' + (tv.streamers[user].stream||'Offline') +'</div></div>'+
+				'<i class="material-icons">'+(tv.streamers[user].stream?'videocam':'pause')+'</i>'+
 			'</div>'+
 			'</a>'+
 			'</li>';

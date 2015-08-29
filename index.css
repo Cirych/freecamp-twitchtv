@@ -1,4 +1,40 @@
-img {
+#tv_main img {
+margin:0 5px 0 0;
 width:50px;
 height:50px;
+vertical-align: top;
+}
+#tv_main ul {
+width:300px;
+padding-left:10px;
+}
+#tv_main li {
+list-style-type: none;
+}
+.tv_row {
+
+}
+.tv_name {
+width:70%;
+font-size: 16px;
+color:black;
+display: inline-block;
+}
+.tv_name div {
+color:black;
+font-size: 14px;
+white-space: nowrap;
+overflow:hidden;
+text-overflow: ellipsis;
+}
+.tv_row i {
+float:right;
+display: inline-block;
+vertical-align: middle;
+}
+#form_search {
+padding:16px 0;
+}
+.mdl-cell{
+margin: auto;
 }
