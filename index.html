@@ -3,20 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <title>Twitchtv</title>
-<!--
 <link href='https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
--->
 <link href='index.css' rel='stylesheet' type='text/css'>
 <script src='index.js'></script>
 </head>
 <body>
 
 <div id="tv_main">
-<div id="tv_all"></div>
-<div id="tv_on"></div>
-<div id="tv_off"></div>
+
+</div>
+
+<div class="mdl-grid">
+<div class="mdl-cell mdl-cell--4-col">
+
+
+
+
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-tabs__tab-bar">
+      <a href="#tv_all_pan" class="mdl-tabs__tab is-active">All</a>
+      <a href="#tv_on_pan" class="mdl-tabs__tab">Online</a>
+      <a href="#tv_off_pan" class="mdl-tabs__tab">Offline</a>
+		<form action="#">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+		<label class="mdl-button mdl-js-button mdl-button--icon" for="tv_search">
+		<i class="material-icons">search</i>
+		</label>
+		<div class="mdl-textfield__expandable-holder">
+		<input class="mdl-textfield__input" type="text" id="tv_search" />
+		<label class="mdl-textfield__label" for="tv_search">Search</label>
+		</div>
+		</div>
+		</form>
+  </div>
+
+  <div class="mdl-tabs__panel is-active" id="tv_all_pan">
+    <ul id="tv_all">
+    </ul>
+  </div>
+  <div class="mdl-tabs__panel" id="tv_on_pan">
+    <ul id="tv_on">
+    </ul>
+  </div>
+  <div class="mdl-tabs__panel" id="tv_off_pan">
+    <ul id="tv_off">
+    </ul>
+  </div>
+</div>
+
+</div>
 </div>
 
 </body>
